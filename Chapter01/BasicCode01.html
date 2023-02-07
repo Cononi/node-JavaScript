@@ -1,0 +1,46 @@
+<!-- 
+에러가 발생하는 코드 작성.
+HTML에 포함된 자바스크립트를 브라우저에서 실행하는 방법
+ -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+</head>
+<body>
+    <!-- 숫자 -->
+    <div id="counter">0</div>
+    <!-- 증가 버튼 -->
+    <div id="increase">+</div>
+    <!-- 마이너스 버튼 -->
+    <div id="derease">-</div>
+    <script>
+        // 에러를 발생시키는 코드 : 선택자 이름이 없는 이름
+        const $counter = document.getElementById('counter-x')
+        // 정상 코드
+        // const $counter = document.getElementById('counter')
+        const $increase = document.getElementById('increase')
+        const $decrease = document.getElementById('derease')
+
+        let num = 0
+
+        // counter에 해당되는 Dom객체 html 조작 
+        const render = function () { $counter.innerHTML = num }
+
+        $increase.onclick = function () {
+            num++
+            console.log('increase 버튼 클릭', num)
+            render();
+        }
+        $decrease.onclick = function () {
+            num--
+            console.log('decrease 버튼 클릭', num)
+            render();
+        }
+    </script>
+</body>
+</html>
+
